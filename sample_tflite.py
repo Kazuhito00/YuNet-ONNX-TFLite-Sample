@@ -119,7 +119,7 @@ def main():
             break
 
         # 画面反映 #########################################################
-        cv.imshow('YuNet ONNX Sample', debug_image)
+        cv.imshow('YuNet TFLite Sample', debug_image)
 
     cap.release()
     cv.destroyAllWindows()
