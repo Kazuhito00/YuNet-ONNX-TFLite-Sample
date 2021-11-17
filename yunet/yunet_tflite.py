@@ -152,7 +152,8 @@ class YuNetTFLite(object):
         landmarks = []
         if len(keepIdx) > 0:
             dets = dets[keepIdx]
-            dets = np.squeeze(dets, axis=1)
+            if len(dets.shape) == 3:
+                dets = np.squeeze(dets, axis=1)
             for det in dets[:self.keep_topk]:
                 scores.append(det[-1])
                 bboxes.append(det[0:4].astype(np.int32))
